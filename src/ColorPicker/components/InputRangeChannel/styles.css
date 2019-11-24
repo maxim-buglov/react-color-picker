@@ -1,0 +1,101 @@
+.InputRangeChannel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: stretch;
+  padding: 0 0.5rem 0 0;
+  height: 1.5rem;
+}
+
+.InputRangeChannel-label {
+  padding: 0 0.3rem 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+.InputRangeChannel-inputWrapper {
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 0;
+  flex: 1 1 auto;
+  align-self: auto;
+}
+
+.InputRangeChannel-input {
+  -webkit-appearance: none;
+  width: 100%;
+}
+
+.InputRangeChannel-input:focus {
+  outline: none;
+}
+
+.InputRangeChannel-input::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 0.1rem;
+  cursor: pointer;
+  border-radius: 2px;
+  background: linear-gradient(45deg, transparent, black);
+  border: none;
+}
+
+.InputRangeChannel-input.red::-webkit-slider-runnable-track {
+  background: linear-gradient(45deg, #600, #f99);
+}
+
+.InputRangeChannel-input.green::-webkit-slider-runnable-track {
+  background: linear-gradient(45deg, #060, #9f9);
+}
+
+.InputRangeChannel-input.blue::-webkit-slider-runnable-track {
+  background: linear-gradient(45deg, #006, #99f);
+}
+
+.InputRangeChannel-input::-moz-range-track {
+  width: 100%;
+  height: 0.1rem;
+  cursor: pointer;
+  border-radius: 2px;
+  background: linear-gradient(45deg, transparent, black);
+  border: none;
+}
+
+.InputRangeChannel-input.red::-moz-range-track {
+  background: linear-gradient(45deg, #600, #f99);
+}
+
+.InputRangeChannel-input.green::-moz-range-track {
+  background: linear-gradient(45deg, #060, #9f9);
+}
+
+.InputRangeChannel-input.blue::-moz-range-track {
+  background: linear-gradient(45deg, #006, #99f);
+}
+
+.InputRangeChannel-input::-webkit-slider-thumb {
+  border: 0.05rem solid #fff;
+  height: 0.6rem;
+  width: 0.6rem;
+  border-radius: 50%;
+  background: #969696;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -0.25rem;
+}
+
+.InputRangeChannel-input::-moz-range-thumb {
+  border: 0.05rem solid #fff;
+  height: 0.6rem;
+  width: 0.6rem;
+  border-radius: 50%;
+  background: #969696;
+  cursor: pointer;
+}

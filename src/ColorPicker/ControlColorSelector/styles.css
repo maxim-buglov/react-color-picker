@@ -1,0 +1,40 @@
+.ControlColorSelectorOption {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: stretch;
+  height: 1.8rem;
+  min-width: 9rem;
+  border-top: 1px solid rgb(236,236,236);
+}
+
+.ControlColorSelectorOption:first-child {
+  border-top: none;
+}
+
+.ControlColorSelectorOption:hover {
+  color: #000;
+}
+
+.ControlColorSelectorOption-title {
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  order: 0;
+  flex: 1 1 auto;
+  align-self: auto;
+}
+
+.ControlColorSelectorOption-indicator {
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}

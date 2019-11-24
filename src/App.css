@@ -1,0 +1,9 @@
+.App {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  padding: 10vh 10vw;
+}

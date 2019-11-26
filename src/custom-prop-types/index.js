@@ -6,6 +6,7 @@ function isRequired(props, propName, componentName) {
       `Required prop '${propName}' was not specified in '${componentName}'.`
     );
   }
+  return this(props, propName, componentName);
 }
 
 function hex(props, propName, componentName) {
@@ -15,10 +16,10 @@ function hex(props, propName, componentName) {
       `Invalid prop '${propName}' supplied to '${componentName}'. Validation failed.`
     );
   }
-};
+}
 
-hex.isRequired = isRequired;
+hex.isRequired = isRequired.bind(hex);
 
 export default {
   hex,
-}
+};

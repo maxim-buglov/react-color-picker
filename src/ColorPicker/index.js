@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
 import CustomPropTypes from './../custom-prop-types';
@@ -7,34 +7,23 @@ import ControlColorSelector from './ControlColorSelector';
 import './styles.css';
 
 function ColorPicker(props) {
-  const { onChange } = props;
-  const [stringColorState, setStringColor] = useState(props.value);
-  const [indicatorColorState, setIndicatorColor] = useState(props.value);
+  const { value, onChange, colors } = props;
+  const [colorState, setColor] = useState(value);
   
   const onChangeColor = useCallback(({ color }) => {
-    setIndicatorColor(color);
-    setStringColor(color);
+    setColor(color);
     onChange({ color });
   }, [onChange]);
 
-  const onTempChangeSettings = useCallback(({ color }) => {
-    setIndicatorColor(color)
-  }, []);
+  useEffect(() => {
+    setColor(value);
+  }, [value])
   
   return (
     <div className="ColorPicker">
-      <div className="DisplayColorString">
-        {stringColorState}
-      </div>
-      <ControlColorSettings
-        color={indicatorColorState}
-        onChange={onChangeColor}
-        onTempChange={onTempChangeSettings}
-      />
-      <ControlColorSelector
-        colors={props.colors}
-        onChange={onChangeColor}
-      />
+      <div className="DisplayColorString">{colorState}</div>
+      <ControlColorSettings color={colorState} onChange={onChangeColor} />
+      <ControlColorSelector colors={colors} onChange={onChangeColor} />
     </div>
   );
 }
